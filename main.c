@@ -8,8 +8,8 @@
 
 typedef struct {
     char *buffer;
-    ssize_t buffer_length;
-    ssize_t input_length;
+    size_t buffer_length;
+    size_t input_length;
 } InputBuffer;
 
 typedef enum {
