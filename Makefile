@@ -14,3 +14,6 @@ clean:
 
 test: db
 	bundle exec rspec
+
+ruby-deps:
+	bundle install --path vendor/bundle
