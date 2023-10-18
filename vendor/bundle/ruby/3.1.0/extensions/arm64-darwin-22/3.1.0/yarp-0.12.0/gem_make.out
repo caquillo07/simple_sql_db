@@ -1,0 +1,49 @@
+current directory: /Users/hectormejia/Documents/code/learnings/c/simple_sql_db/vendor/bundle/ruby/3.1.0/gems/yarp-0.12.0/ext/yarp
+/Users/hectormejia/.asdf/installs/ruby/3.1.2/bin/ruby -I /Users/hectormejia/.asdf/installs/ruby/3.1.2/lib/ruby/3.1.0 -r ./siteconf20231011-68774-3cxs7v.rb extconf.rb
+checking for whether -fvisibility=hidden is accepted as CFLAGS... yes
+compiling build/static/diagnostic.o
+compiling build/static/token_type.o
+compiling build/static/prettyprint.o
+compiling build/static/util/yp_state_stack.o
+compiling build/static/util/yp_memchr.o
+compiling build/static/util/yp_newline_list.o
+compiling build/static/util/yp_constant_pool.o
+compiling build/static/util/yp_string_list.o
+compiling build/static/util/yp_strpbrk.o
+compiling build/static/util/yp_string.o
+compiling build/static/util/yp_list.o
+compiling build/static/util/yp_char.o
+compiling build/static/util/yp_buffer.o
+compiling build/static/util/yp_strncasecmp.o
+compiling build/static/serialize.o
+compiling build/static/regexp.o
+compiling build/static/pack.o
+compiling build/static/enc/yp_unicode.o
+compiling build/static/enc/yp_windows_31j.o
+compiling build/static/enc/yp_gbk.o
+compiling build/static/enc/yp_shift_jis.o
+compiling build/static/enc/yp_euc_jp.o
+compiling build/static/enc/yp_big5.o
+compiling build/static/enc/yp_tables.o
+compiling build/static/unescape.o
+compiling build/static/node.o
+compiling build/static/yarp.o
+building build/librubyparser.a
+ar: creating archive build/librubyparser.a
+checking for yarp.h in /Users/hectormejia/Documents/code/learnings/c/simple_sql_db/vendor/bundle/ruby/3.1.0/gems/yarp-0.12.0/include... yes
+checking for yarp/extension.h in /Users/hectormejia/Documents/code/learnings/c/simple_sql_db/vendor/bundle/ruby/3.1.0/gems/yarp-0.12.0/ext/yarp/..... yes
+creating Makefile
+
+current directory: /Users/hectormejia/Documents/code/learnings/c/simple_sql_db/vendor/bundle/ruby/3.1.0/gems/yarp-0.12.0/ext/yarp
+make DESTDIR\= clean
+
+current directory: /Users/hectormejia/Documents/code/learnings/c/simple_sql_db/vendor/bundle/ruby/3.1.0/gems/yarp-0.12.0/ext/yarp
+make DESTDIR\=
+compiling api_node.c
+compiling api_pack.c
+compiling extension.c
+linking shared-object yarp/yarp.bundle
+
+current directory: /Users/hectormejia/Documents/code/learnings/c/simple_sql_db/vendor/bundle/ruby/3.1.0/gems/yarp-0.12.0/ext/yarp
+make DESTDIR\= install
+/usr/bin/install -c -m 0755 yarp.bundle ./.gem.20231011-68774-oevf20/yarp

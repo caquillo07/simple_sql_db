@@ -1,0 +1,15 @@
+current directory: /Users/hectormejia/Documents/code/learnings/c/simple_sql_db/vendor/bundle/ruby/3.1.0/gems/stringio-3.0.8/ext/stringio
+/Users/hectormejia/.asdf/installs/ruby/3.1.2/bin/ruby -I /Users/hectormejia/.asdf/installs/ruby/3.1.2/lib/ruby/3.1.0 -r ./siteconf20231011-68774-z0oamd.rb extconf.rb
+creating Makefile
+
+current directory: /Users/hectormejia/Documents/code/learnings/c/simple_sql_db/vendor/bundle/ruby/3.1.0/gems/stringio-3.0.8/ext/stringio
+make DESTDIR\= clean
+
+current directory: /Users/hectormejia/Documents/code/learnings/c/simple_sql_db/vendor/bundle/ruby/3.1.0/gems/stringio-3.0.8/ext/stringio
+make DESTDIR\=
+compiling stringio.c
+linking shared-object stringio.bundle
+
+current directory: /Users/hectormejia/Documents/code/learnings/c/simple_sql_db/vendor/bundle/ruby/3.1.0/gems/stringio-3.0.8/ext/stringio
+make DESTDIR\= install
+/usr/bin/install -c -m 0755 stringio.bundle ./.gem.20231011-68774-2vyhbg

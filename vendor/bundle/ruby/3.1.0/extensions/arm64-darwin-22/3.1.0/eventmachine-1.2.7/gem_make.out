@@ -1,0 +1,16 @@
+current directory: /Users/hectormejia/Documents/code/learnings/c/simple_sql_db/vendor/bundle/ruby/3.1.0/gems/eventmachine-1.2.7/ext/fastfilereader
+/Users/hectormejia/.asdf/installs/ruby/3.1.2/bin/ruby -I /Users/hectormejia/.asdf/installs/ruby/3.1.2/lib/ruby/3.1.0 -r ./siteconf20231011-66082-4h5dbv.rb extconf.rb
+creating Makefile
+
+current directory: /Users/hectormejia/Documents/code/learnings/c/simple_sql_db/vendor/bundle/ruby/3.1.0/gems/eventmachine-1.2.7/ext/fastfilereader
+make DESTDIR\= clean
+
+current directory: /Users/hectormejia/Documents/code/learnings/c/simple_sql_db/vendor/bundle/ruby/3.1.0/gems/eventmachine-1.2.7/ext/fastfilereader
+make DESTDIR\=
+compiling mapper.cpp
+compiling rubymain.cpp
+linking shared-object fastfilereaderext.bundle
+
+current directory: /Users/hectormejia/Documents/code/learnings/c/simple_sql_db/vendor/bundle/ruby/3.1.0/gems/eventmachine-1.2.7/ext/fastfilereader
+make DESTDIR\= install
+/usr/bin/install -c -m 0755 fastfilereaderext.bundle ./.gem.20231011-66082-eyb1au
