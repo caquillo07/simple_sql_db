@@ -24,8 +24,10 @@ typedef enum {
 
 typedef enum {
     PREPARE_SUCCESS,
+    PREPARE_NEGATIVE_ID,
     PREPARE_UNRECOGNIZED_STATEMENT,
     PREPARE_SYNTAX_ERROR,
+    PREPARE_STRING_TOO_LONG,
 } PrepareResult;
 
 typedef enum {
@@ -155,20 +157,40 @@ MetaCommandResult doMetaCommand(InputBuffer *inputBuffer, Table* table) {
     return META_COMMAND_UNRECOGNIZED_COMMAND;
 }
 
+PrepareResult prepareInsert(InputBuffer* input_buffer, Statement* statement) {
+    statement->type = STATEMENT_INSERT;
+
+    char* keyword = strtok(input_buffer->buffer, " ");
+    char* id_string = strtok(NULL, " ");
+    char* username = strtok(NULL, " ");
+    char* email = strtok(NULL, " ");
+
+    if (id_string == NULL || username == NULL || email == NULL) {
+        return PREPARE_SYNTAX_ERROR;
+    }
+
+    int id = atoi(id_string);
+    if (id < 0) {
+        return PREPARE_NEGATIVE_ID;
+    }
+    if (strlen(username) > COLUMN_USERNAME_SIZE) {
+        return PREPARE_STRING_TOO_LONG;
+    }
+
+    if (strlen(email) > COLUMN_EMAIL_SIZE) {
+        return PREPARE_STRING_TOO_LONG;
+    }
+
+    statement->rowToInsert.id = id;
+    strcpy(statement->rowToInsert.username, username);
+    strcpy(statement->rowToInsert.email, email);
+
+    return PREPARE_SUCCESS;
+}
+
 PrepareResult prepareStatement(InputBuffer *inputBuffer, Statement *statement) {
     if (strncmp(inputBuffer->buffer, "insert", 6) == 0) {
-        statement->type = STATEMENT_INSERT;
-        int argsAssigned = sscanf(
-                inputBuffer->buffer, "insert %d %s %s",
-                &(statement->rowToInsert.id),
-                statement->rowToInsert.username,
-                statement->rowToInsert.email
-        );
-        if (argsAssigned < 3) {
-            return PREPARE_SYNTAX_ERROR;
-        }
-
-        return PREPARE_SUCCESS;
+        return prepareInsert(inputBuffer, statement);
     }
     if (strcmp(inputBuffer->buffer, "select") == 0) {
         statement->type = STATEMENT_SELECT;
@@ -233,6 +255,12 @@ int main(int argc, char *argv[]) {
                 continue;
             case (PREPARE_UNRECOGNIZED_STATEMENT):
                 printf("Unrecognized keyword at start of '%s'.\n", inputBuffer->buffer);
+                continue;
+            case (PREPARE_STRING_TOO_LONG):
+                printf("String is too long.\n");
+                continue;
+            case (PREPARE_NEGATIVE_ID):
+                printf("ID must be positive.\n");
                 continue;
         }
         switch (executeStatement(&statement, table)) {
